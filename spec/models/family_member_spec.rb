@@ -8,4 +8,8 @@ describe FamilyMember, type: :model do
     it { should validate_presence_of :date_of_birth }
     it { should validate_presence_of :place_of_birth }
   end
+
+  describe "relationships" do
+    it {should belong_to :family}
+  end
 end
