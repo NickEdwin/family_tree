@@ -6,9 +6,7 @@ class CreateFamilyMember < ActiveRecord::Migration[6.0]
       t.string :gender
       t.string :date_of_birth
       t.string :place_of_birth
-      t.text   :description
-
-      t.timestamps
+      t.references :family, null: false, foreign_key: true
     end
   end
 end
