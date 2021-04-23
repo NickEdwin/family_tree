@@ -4,4 +4,6 @@ class FamilyMember < ApplicationRecord
                         :gender,
                         :date_of_birth,
                         :place_of_birth
+
+  belongs_to :family
 end
