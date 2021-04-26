@@ -3,6 +3,7 @@ class FamilyMember < ApplicationRecord
                         :last_name,
                         :gender,
                         :date_of_birth,
+                        :date_of_death,
                         :place_of_birth
 
   belongs_to :family
