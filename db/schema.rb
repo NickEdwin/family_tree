@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_23_180929) do
+ActiveRecord::Schema.define(version: 2021_04_26_155746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_04_23_180929) do
     t.string "date_of_birth"
     t.string "place_of_birth"
     t.bigint "family_id", null: false
+    t.string "date_of_death"
     t.index ["family_id"], name: "index_family_members_on_family_id"
   end
 
