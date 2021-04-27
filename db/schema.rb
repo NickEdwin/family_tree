@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_155746) do
+ActiveRecord::Schema.define(version: 2021_04_26_163220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,5 +33,22 @@ ActiveRecord::Schema.define(version: 2021_04_26_155746) do
     t.index ["family_id"], name: "index_family_members_on_family_id"
   end
 
+  create_table "relationships", force: :cascade do |t|
+    t.bigint "family_id"
+    t.bigint "family_member_1_id"
+    t.bigint "family_member_2_id"
+    t.string "family_member_1_relationship_to_2"
+    t.string "family_member_2_relationship_to_1"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["family_id"], name: "index_relationships_on_family_id"
+    t.index ["family_member_1_id"], name: "index_relationships_on_family_member_1_id"
+    t.index ["family_member_2_id"], name: "index_relationships_on_family_member_2_id"
+  end
+
   add_foreign_key "family_members", "families"
+  add_foreign_key "relationships", "families"
+  add_foreign_key "relationships", "family_members", column: "family_member_1_id"
+  add_foreign_key "relationships", "family_members", column: "family_member_2_id"
 end
