@@ -3,4 +3,5 @@ class Family < ApplicationRecord
                         :family_description
 
   has_many :family_members
+  has_many :relationships
 end
