@@ -7,4 +7,6 @@ class FamilyMember < ApplicationRecord
                         :place_of_birth
 
   belongs_to :family
+  has_many :relationships, through: :family_member_1_id
+  has_many :relationships, through: :family_member_2_id
 end
