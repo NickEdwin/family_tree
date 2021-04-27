@@ -6,5 +6,5 @@ class Relationship < ApplicationRecord
                         :family_member_2_relationship_to_1
 
   belongs_to :family
-  belongs_to :family_member
+  has_many :family_members
 end
