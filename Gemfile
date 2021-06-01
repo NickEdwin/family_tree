@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'nodejs-rails', '~> 0.0.1'
 gem 'webpacker'
-gem 'bootstrap', '~> 4.3'
+gem 'bootstrap', '4.0'
 gem 'jquery-rails'
 
 

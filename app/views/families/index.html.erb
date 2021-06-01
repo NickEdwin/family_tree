@@ -1,1 +1,19 @@
-<a class="btn btn-primary" href="/families/new" role="button">Create a new family</a>
+<% if @families.any? %>
+  <div class="row">
+    <% @families.each do |family| %>
+      <div class="col-sm-6">
+        <div class="family-<%= family.id %>">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"> <%= family.family_name %> </h5>
+              <p class="card-text"> <%= family.family_description %> <p>
+              <a href="/families/<%= family.id %>" class="card-link">View Family</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else  %>
+  <h5>There are currently no families in the system.</h5>
+<% end %>
